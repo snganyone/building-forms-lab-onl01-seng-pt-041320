@@ -7,14 +7,14 @@ class BandsContainer extends Component {
     return(
       <div>
         BandsContainer
-        <BandInput />
+        <BandInput addBand={this.props.addBand}/>
       </div>
     )
   }
 }
 
-const mapDispatchToProps = state => {
-  return {bands: state.bands}
-}
+const mapDispatchToProps = dispatch => ({
+  addBand: formData => dispatch({ type: 'ADD_BAND', payload: formData})
+})
 
-export default connect(mapDispatchToProps)(BandsContainer);
+export default connect(null, mapDispatchToProps)(BandsContainer);
