@@ -2,10 +2,19 @@
 import React, { Component } from 'react'
 
 class BandInput extends Component {
+  constructor(){
+    super();
+    this.state = {
+      name: '',
+    }
+  }
   render() {
     return(
       <div>
-        Band Input
+        <form>
+          <input type="text" 
+          value={this.state.name}/>
+        </form>
       </div>
     )
   }
